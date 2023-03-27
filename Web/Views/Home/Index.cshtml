@@ -1,0 +1,26 @@
+﻿@model HomeViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Hava Durumunu Öğren</h1>
+    <form method="get" class="row d-flex justify-content-center">
+        <div class="col-md-6">
+            <div class="input-group">
+                <input class="form-control w-auto" type="text" asp-for="Yer" />
+                <button class="btn btn-primary">Öğren</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+@if (Model.Yer != null) 
+{
+    <div class="card mt-4">
+        <div class="card-body text-center py-3">
+            @Model.Yer için Hava Sıcaklığı: @Model.Sicaklik °C
+        </div>
+    </div>
+}
